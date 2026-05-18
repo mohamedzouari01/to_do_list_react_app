@@ -1,5 +1,37 @@
-# voir site 
-Voici le **démo en ligne** : [Voir le site](https://mytaskshub.netlify.app)
+# Todo List App
+
+A modern and responsive Todo List application built with React and Material UI.  
+This project helps users manage daily tasks with a clean interface and smooth user experience.
+
+---
+
+## 🚀 Features
+
+- ✅ Add new tasks
+- ✏️ Edit tasks
+- 🗑️ Delete tasks
+- ✔️ Mark tasks as completed
+- 🔍 Filter tasks (All / Completed / Active)
+- 💾 Save tasks using Local Storage
+- 📱 Fully Responsive Design
+- 🎨 Material UI Components
+- ⚡ Fast and Interactive UI
+
+---
+
+## 🛠️ Technologies Used
+
+- React.js
+- JavaScript (ES6+)
+- Material UI (MUI)
+- CSS3
+
+--- 
+
+# Design of website
+![website desgin](public/image.png)
+# website link 
+this is **demo on ligne** : [Voir le site](https://mytaskshub.netlify.app)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
