@@ -17,9 +17,12 @@
 
 /* Add task button */
 .butonAddTask {
-  position: absolute !important;
-  bottom: 20px;
-  right: 20px;
+  position: "absoulte" !important;
+}
+
+button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-sizeMedium.MuiButton-colorPrimary.css-1e47jp6-MuiButtonBase-root-MuiButton-root {
+  top: 50% !important;
+  background: #3a91de;
 }
 
 /* icon */
