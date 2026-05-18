@@ -32,6 +32,11 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-sizeMediu
   right: 20px;
 }
 
-/* .MuiCardContent-root.css-15q2cw4 {
-  height: 95vh;
-} */
+.MuiCardContent-root.css-15q2cw4 {
+  height: 88vh;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
