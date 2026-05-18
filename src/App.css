@@ -1,42 +1,94 @@
 .App {
   display: flex;
   justify-content: center;
-  background-color: #f8fcffcc;
   align-items: center;
-  height: 100vh;
+  background-color: #f8fcffcc;
+  min-height: 100vh;
+  padding: 10px;
 }
 
+/* Button toggle */
 .buttonTog {
-  border: "1px solid gray";
+  border: 1px solid gray;
   border-radius: 15px !important;
   padding: 10px !important;
   font-size: 17px !important;
-
 }
 
+/* Add task button */
 .butonAddTask {
-  position: "absoulte" !important;
+  position: absolute !important;
+  bottom: 20px;
+  right: 20px;
 }
 
-button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-sizeMedium.MuiButton-colorPrimary.css-1e47jp6-MuiButtonBase-root-MuiButton-root {
-  top: 50% !important;
-}
-
+/* icon */
 .iconTask {
   font-size: 26px !important;
 }
 
+/* action buttons */
 .actionButtons {
   position: absolute !important;
   top: 37px !important;
   right: 20px;
 }
 
-.MuiCardContent-root.css-15q2cw4 {
+/* Card scroll area */
+.MuiCardContent-root {
   height: 88vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
-::-webkit-scrollbar {
+/* hide scrollbar */
+.MuiCardContent-root::-webkit-scrollbar {
   display: none;
+}
+
+/* ===================== */
+/* 📱 MOBILE RESPONSIVE */
+/* ===================== */
+@media (max-width: 768px) {
+  .App {
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+
+  .buttonTog {
+    font-size: 14px !important;
+    padding: 8px !important;
+  }
+
+  .iconTask {
+    font-size: 20px !important;
+  }
+
+  .actionButtons {
+    top: 20px !important;
+    right: 10px;
+  }
+
+  .butonAddTask {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .MuiCardContent-root {
+    height: calc(100vh - 120px);
+  }
+}
+
+/* très petits écrans */
+@media (max-width: 480px) {
+  .buttonTog {
+    font-size: 13px !important;
+  }
+
+  .iconTask {
+    font-size: 18px !important;
+  }
+
+  .MuiCardContent-root {
+    height: calc(100vh - 100px);
+  }
 }
