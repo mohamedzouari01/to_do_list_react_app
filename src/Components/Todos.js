@@ -107,7 +107,9 @@ export default function Todos() {
                             letterSpacing: 1,
                             fontSize: 50,
                             fontFamily: "system-ui"
-                        }}>
+                        }}
+                            className='title_card'
+                        >
                             Daily Task Manager App
                         </Typography>
                         <Typography sx={{ color: 'text.secondary', mb: 5, marginTop: 2 }}>
