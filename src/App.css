@@ -1,46 +1,23 @@
 .App {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background-color: #f8fcffcc;
   min-height: 100vh;
-  padding: 10px;
+  padding: 12px;
 }
 
-/* Button toggle */
-.buttonTog {
-  border: 1px solid gray;
-  border-radius: 15px !important;
-  padding: 10px !important;
-  font-size: 17px !important;
+/* ================= CARD ================= */
+.MuiCard-root {
+  width: 100%;
+  max-width: 900px;
 }
 
-/* Add task button */
-.butonAddTask {
-  position: "absoulte" !important;
-}
-
-button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-sizeMedium.MuiButton-colorPrimary.css-1e47jp6-MuiButtonBase-root-MuiButton-root {
-  top: 50% !important;
-  background: #3a91de;
-}
-
-/* icon */
-.iconTask {
-  font-size: 26px !important;
-}
-
-/* action buttons */
-.actionButtons {
-  position: absolute !important;
-  top: 37px !important;
-  right: 20px;
-}
-
-/* Card scroll area */
+/* scroll area */
 .MuiCardContent-root {
-  height: 88vh;
+  max-height: 85vh;
   overflow-y: auto;
+  padding-bottom: 20px;
 }
 
 /* hide scrollbar */
@@ -48,50 +25,102 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-sizeMediu
   display: none;
 }
 
-/* ===================== */
-/* 📱 MOBILE RESPONSIVE */
-/* ===================== */
-@media (max-width: 768px) {
-  .App {
-    align-items: flex-start;
-    padding-top: 20px;
+/* ================= TITLE ================= */
+.MuiTypography-h1,
+.MuiTypography-h2,
+.MuiTypography-h3 {
+  font-size: clamp(22px, 4vw, 50px) !important;
+}
+
+/* ================= INPUT SECTION ================= */
+.butonAddTask {
+  display: flex;
+  width: 100%;
+}
+
+/* button */
+.buttonAdd {
+  background: #3a91de !important;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px !important;
+  font-size: 16px !important;
+}
+
+/* icon */
+.iconTask {
+  font-size: 22px !important;
+}
+
+/* ================= TOGGLE ================= */
+.buttonTog {
+  border-radius: 12px !important;
+  padding: 8px !important;
+  font-size: 18px !important;
+}
+
+/* ================= TASK ACTIONS ================= */
+.actionButtons {
+  position: absolute !important;
+  top: 15px;
+  right: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
+@media (max-width: 900px) {
+  .MuiCard-root {
+    max-width: 100%;
   }
 
-  .buttonTog {
-    font-size: 14px !important;
-    padding: 8px !important;
-  }
-
-  .iconTask {
-    font-size: 20px !important;
-  }
-
-  .actionButtons {
-    top: 20px !important;
-    right: 10px;
-  }
-
-  .butonAddTask {
-    bottom: 15px;
-    right: 15px;
-  }
-
-  .MuiCardContent-root {
-    height: calc(100vh - 120px);
+  .buttonAdd {
+    font-size: 15px !important;
   }
 }
 
-/* très petits écrans */
-@media (max-width: 480px) {
-  .buttonTog {
-    font-size: 13px !important;
+/* MOBILE */
+@media (max-width: 600px) {
+  .App {
+    padding: 8px;
+  }
+
+  .MuiCardContent-root {
+    max-height: 90vh;
+  }
+
+  .buttonAdd {
+    font-size: 14px !important;
+    height: 44px;
   }
 
   .iconTask {
     font-size: 18px !important;
   }
 
-  .MuiCardContent-root {
-    height: calc(100vh - 100px);
+  .buttonTog {
+    font-size: 12px !important;
+    padding: 6px !important;
   }
+
+  .actionButtons {
+    top: 10px;
+    right: 5px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 400px) {
+  .buttonAdd {
+    font-size: 13px !important;
+  }
+
+  .buttonTog {
+    font-size: 11px !important;
+  }
+}
+
+button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-sizeMedium.MuiButton-colorPrimary.buttonAdd.css-11p8w26-MuiButtonBase-root-MuiButton-root {
+  position: relative;
+  top: 50%;
 }

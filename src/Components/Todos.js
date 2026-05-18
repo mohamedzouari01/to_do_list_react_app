@@ -119,7 +119,7 @@ export default function Todos() {
                                 <TextField label="My Task" variant="outlined" sx={{ width: "100%" }} error={errorValidation.task} helperText={errorValidation.task ? errorValidation.task : ""} className='AddTaskInput' value={inputData.task} onChange={(e) => setInputData({ ...inputData, task: e.target.value })} />
                             </Grid>
                             <Grid size={3} className="butonAddTask">
-                                <Button variant="contained" startIcon={<AddTaskIcon className='iconTask' />} sx={{ width: "100%", height: "100%", fontSize: "18px" }} onClick={() => { handleData(); }}>Add Task</Button>
+                                <Button variant="contained" startIcon={<AddTaskIcon className='iconTask' />} sx={{}} onClick={() => { handleData(); }} className='buttonAdd'>Add Task</Button>
                             </Grid>
                             <Grid size={9}>
                                 <TextField label="description Task" variant="outlined" sx={{ width: "100%" }} error={errorValidation.description} helperText={errorValidation.description ? errorValidation.description : ""} className='AddTaskInput' value={inputData.description} onChange={(e) => setInputData({ ...inputData, description: e.target.value })} />
