@@ -136,14 +136,7 @@ export default function Todos() {
                             <ToggleButton value="Incompleted" className='buttonTog'>Incompleted</ToggleButton>
                             <ToggleButton value="Completed" className='buttonTog'>Completed</ToggleButton>
                         </ToggleButtonGroup>
-                        <div style={{
-                            marginTop: "3px",
-                            height: "300px", overflowY: "scroll",
-                            scrollbarWidth: "none",
-                            "&::-webkit-scrollbar": {
-                                display: "none",
-                            },
-                        }}>
+                        <div>
                             {taskList}
                         </div>
                     </CardContent>
