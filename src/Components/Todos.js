@@ -10,7 +10,7 @@ import Button from '@mui/material/Button';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Todo from './Todo';
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext, useEffect, useMemo } from 'react';
 import DeleteModal from './DeleteModal';
 import { TodosContext } from '../Context/todosContext';
 import UpdateModal from './UpdateModal';
@@ -23,7 +23,6 @@ export default function Todos() {
     const [selectedIdDelete, setSelectedIdDelete] = useState(null);
     const [errorValidation, setErrorValidation] = useState({ task: "", description: "" });
     const [filter, setFilter] = useState("All");
-    const [TodoFilter, setTodoFilter] = useState(todotask);
     const handleOpenUpdate = (id) => {
         setSelectedIdUpdate(id);
         setOpenUpdate(true);
@@ -72,25 +71,23 @@ export default function Todos() {
         setTodotask(prev => [...prev, newTask]);
         setInputData({ task: "", description: "" });
     }
-    function handleFilter() {
-        //All Incompleted  Completed
-        let task = todotask;
-        if (filter === "All") {
-            task = todotask;
-        } else if (filter === "Incompleted") {
-            task = todotask.filter((t) => !t.isCompleted);
-        } else if (filter === "Completed") {
-            task = todotask.filter((t) => t.isCompleted);
-        }
-        let taskList = task
-        return taskList;
-    }
-    useEffect(() => {
-        setTodoFilter(handleFilter);
-    }, [filter, todotask]);
-    let taskList = TodoFilter.map((t) => {
-        return <Todo key={t.id} task={t} handleClickOpenDelete={handleClickOpenDelete} handleOpenUpdate={handleOpenUpdate} />;
-    });;
+    const TodoFilter = useMemo(() => {
+        return todotask.filter((t) => {
+            if (filter === "Completed") return t.isCompleted;
+            if (filter === "Incompleted") return !t.isCompleted;
+            return true;
+        });
+    }, [todotask, filter])
+    const taskList = TodoFilter.map((t) => {
+        return (
+            <Todo
+                key={t.id}
+                task={t}
+                handleClickOpenDelete={handleClickOpenDelete}
+                handleOpenUpdate={handleOpenUpdate}
+            />
+        );
+    });
     return (
         <>
             <DeleteModal open={openDelete} handleClose={handleCloseDelete} id={selectedIdDelete} />
@@ -132,7 +129,7 @@ export default function Todos() {
                             value={filter}
                             exclusive
                             sx={{ display: "flex", justifyContent: "center", gap: 5 }}
-                            onChange={(event, newFilter) => { setFilter(newFilter); }}
+                            onChange={(e) => { setFilter(e.target.value); }}
                         >
                             <ToggleButton value="All" className='buttonTog'>All</ToggleButton>
                             <ToggleButton value="Incompleted" className='buttonTog'>Incompleted</ToggleButton>
