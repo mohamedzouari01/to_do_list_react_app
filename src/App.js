@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Todos from './Components/Todos';
+import { useState } from 'react';
+import { TodosContext } from './Context/todosContext';
 function App() {
+  const tasks = [];
+  const [todotask, setTodotask] = useState(tasks);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TodosContext.Provider value={{ todotask, setTodotask }}>
+        <Todos />
+      </TodosContext.Provider>
     </div>
   );
 }
