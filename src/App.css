@@ -106,7 +106,7 @@
     position: absolute !important;
     top: 37px !important;
     right: 20px;
-    gap: 10px !important;
+    gap: 15px !important;
   }
 }
 
@@ -121,7 +121,7 @@
   }
 
   .actionButtons {
-    gap: 5px !important;
+    gap: 10px !important;
   }
 }
 
