@@ -31,3 +31,7 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-sizeMediu
   top: 37px !important;
   right: 20px;
 }
+
+.MuiCardContent-root.css-15q2cw4 {
+  height: 90vh;
+}
