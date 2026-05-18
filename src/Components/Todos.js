@@ -97,7 +97,7 @@ export default function Todos() {
             <UpdateModal open={openUpdate} handleClose={handleCloseUpdate} task={selectedIdUpdate} />
             <Container maxWidth="md" sx={{ margin: "5px auto" }}>
                 <Card sx={{
-                    background: "transparent", backdropFilter: "blur(100px)", height: "80vh"
+                    background: "transparent", backdropFilter: "blur(100px)"
                 }}>
                     <CardContent>
                         <Typography component="div" sx={{
